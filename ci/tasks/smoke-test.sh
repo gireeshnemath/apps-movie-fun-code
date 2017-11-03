@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -ex
-
+apt-get update && apt-get install -y maven
 if [ -z $MOVIEFUN_SERVICE_URL ]; then
   echo "MOVIEFUN_SERVICE_URL not set"
   exit 1
