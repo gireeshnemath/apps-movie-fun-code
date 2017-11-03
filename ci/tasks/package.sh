@@ -2,7 +2,7 @@
 
 set -e +x
 echo "Packaging JAR 1"
-apt-get update && apt-get install maven
+apt-get update && apt-get install -y maven
 pushd movie-fun
   echo "Packaging JAR"
   mvn clean package -DskipTests
