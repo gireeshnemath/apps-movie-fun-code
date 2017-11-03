@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e +x
-echo "Packaging JAR 1”
+echo "Packaging JAR 1"
 apt-get update && apt-get install maven
 pushd movie-fun
   echo "Packaging JAR"
