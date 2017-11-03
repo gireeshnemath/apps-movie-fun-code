@@ -29,3 +29,13 @@ jobs:
       manifest: movie-fun/manifest.yml
       path: package-output/movie-fun.war
 
+- name: smoke_test
+  public: true
+  plan:
+  - get: movie-fun
+    trigger: true
+    passed: [deploy]
+  - task: smoke_test
+    file: movie-fun/ci/tasks/smoke-test.yml
+    params:
+      MOVIEFUN_SERVICE_URL: https://movie-fun-pseudoarchaic-vixen.apps.cumuluslabs.io  #<---- REPLACE ME
