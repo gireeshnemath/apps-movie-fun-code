@@ -1,10 +1,11 @@
 #!/bin/bash
 
 set -e +x
-echo "Packaging JAR 1"
+echo "Packaging JAR 1”
+apt-get update && apt-get install maven
 pushd movie-fun
   echo "Packaging JAR"
-  ./mvnw clean package -DskipTests
+  mvn clean package -DskipTests
 popd
 
 jar_count=`find movie-fun/target -type f -name *.jar | wc -l`
