@@ -6,6 +6,7 @@ apt-get update && apt-get install -y maven
 pushd movie-fun
   echo "Packaging JAR"
   mvn clean package -DskipTests
+  echo $(ls ./target/*.*)
 popd
 
 jar_count=`find movie-fun/target -type f -name *.jar | wc -l`
